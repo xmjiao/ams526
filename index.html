@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>AMS 526 Numerical Linear Algebra</title>
+  <meta name="DESCRIPTION" content="AMS 526 Numerical Linear Algebra">
+  <meta name="author" content="Xiangmin Jiao">
+  <style>
+    H2.cjk {
+      font-family: "SimSun";
+    }
+
+    H2.ctl,
+    H3.ctl {
+      font-family: "Lucida Sans";
+    }
+
+    body {
+      vlink: #800080;
+      link: #0000ff;
+    }
+
+    .label {
+        display: inline-block;
+        width: 100px; /* Adjust this width as needed to align the text */
+    }
+    .course-title {
+      font-size: 32px;
+      /* Adjust this value as per your preference for the title size */
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .small-heading {
+      font-size: 16px;
+    }
+
+    /* Separate styles to a CSS section or file */
+    .content-container {
+      max-width: 95%;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    .section-title {
+      background-color: #4CAF50;
+      color: #fff;
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px 0;
+    }
+
+    .section-content {
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .section-content p,
+    .section-content ul {
+      text-align: justify;
+    }
+
+    .section-content h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body dir="LTR">
+  <center>
+    <table width="95%" cellspacing="2" cellpadding="2">
+      <tbody>
+        <tr>
+          <td style="border: none; padding: 0;">
+            <h2 class="course-title">
+              <a name="top"></a>AMS 526 Numerical Linear Algebra<br> Spring 2026<br>
+              <span style="font-size: 20px;">Time: Monday &amp; Wednesday 3:30&ndash;4:50 pm<br> Location:
+                Frey Hall 226</span>
+            </h2>
+            <h2 class="small-heading"><a href="schedule.html">Lecture Schedule and Slides</a></h2>
+            <hr>
+            <table style="width: 95%;" cellspacing="0" cellpadding="2">
+              <tbody>
+                <tr>
+                  <td style="border: none; padding: 0;" width="55%">
+                    <p align="LEFT">
+                      <span class="label">Instructor:</span> Prof. <a href="http://www.ams.sunysb.edu/%7Ejiao">Xiangmin (Jim)
+                        Jiao</a><br> <span class="label">Email:</span>
+                      <script
+                        language="JavaScript">user = 'xiangmin.jiao'; site = 'stonybrook.edu'; document.write('<a href=\"mailto:' + user + '@' + site + '\">'); document.write(user + '@' + site + '</a>');</script>
+                      <br> <span class="label">Office hours:</span> Monday 1:15pm&ndash;3:15pm &amp; Wednesday
+                      9:30am&ndash;10:30am<br> <span class="label">Office:</span> 1-117 Math Tower or via Zoom (see <a href="https://mycourses.stonybrook.edu/d2l/le/content/2480728/Home">Brightspace</a> for link)
+                    </p>
+                  </td>
+                  <td style="border: none; padding: 0;" width="40%">
+                    <p><span class="label">TA:</span>Axi Aguilera<br>
+                      <span class="label">Email:</span><script
+                        language="JavaScript">user = 'axi.aguilera'; site = 'stonybrook.edu'; document.write('<a href=\"mailto:' + user + '@' + site + '\">'); document.write(user + '@' + site + '</a>');</script>
+                      <br> <span class="label">Office hours:</span>Tuesday 12:30&ndash;1:30pm &amp; Thursday 1:00&ndash;2:00pm<br>
+                      <span class="label">Office:</span>IACS Aisle 6 or via Zoom (see <a href="https://mycourses.stonybrook.edu/d2l/le/content/2480728/Home">Brightspace</a> for link)
+                    </p>
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <hr>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </center>
+
+  <div class="content-container">
+    <!-- Course Description Section -->
+    <section id="description">
+      <h2 class="section-title">Course Description</h2>
+      <div class="section-content">
+        <p>
+          Direct and iterative methods for solving simultaneous linear
+          equations. Matrix factorization, conditioning, stability,
+          sparsity, and efficiency. Computation of eigenvalues and
+          eigenvectors. Singular value decomposition.
+        </p>
+
+        <h3>Required Textbook</h3>
+        <ul>
+          <li><a href="https://www.amazon.com/Numerical-Linear-Algebra-Lloyd-Trefethen/dp/0898713617">Lloyd N.
+              Trefethen and D. Bau III, <i>Numerical
+                Linear Algebra</i></a>, SIAM, 1997.</li>
+          <li><a href="http://www.amazon.com/dp/1421407949">G. H. Golub and C. F. Van Loan, <i>Matrix
+                Computations</i></a>, 4th Edition, Johns Hopkins
+            University Press, 2012. ISBN 978-1421407944.</li>
+        </ul>
+
+        <h3>Prerequisite</h3>
+        <ul>
+          <li>AMS 510 (linear algebra portion as co-requisite) or
+            equivalent undergraduate-level linear algebra course.
+            Familiarity with the following concepts is assumed: Vector
+            spaces, Gaussian elimination, Gram-Schmidt orthogonalization,
+            and eigenvalues/eigenvectors.</li>
+          <li>AMS 595 (co-requisite for students without programming
+            experience).</li>
+        </ul>
+
+        <h3>Learning Objectives</h3>
+        <p>The objective of this course is to introduce
+          the key concepts and algorithms in numerical linear algebra,
+          including direct and iterative methods for solving simultaneous
+          linear equations, least squares problems, computation of
+          eigenvalues and eigenvectors, and singular value decomposition.
+          The key learning outcomes include the following:
+        </p>
+        <ol>
+          <li>Master concepts and numerical methods for solving systems of
+            linear equations
+            <ul>
+              <li>Gaussian elimination and its variants</li>
+              <li>Cholesky and LDL<sup>T</sup> factorizations</li>
+            </ul>
+          </li>
+          <li>Master concepts of orthogonality and numerical methods for
+            linear least squares problems
+            <ul>
+              <li>Orthogonal matrices, projectors, and linear least squares</li>
+              <li>QR factorization using Gram-Schmidt orthogonalization,
+                Householder reflectors, and Givens rotation</li>
+            </ul>
+          </li>
+          <li>Build fundamental understanding of conditioning and
+            stability
+            <ul>
+              <li>Norms, condition numbers, and effect of rounding errors</li>
+              <li>Stable and backward stable algorithms</li>
+              <li>Backward error analysis of fundamental algorithms</li>
+            </ul>
+          </li>
+          <li>Master concepts and analyses based on eigenvalues and
+            singular values and their numerical computations
+            <ul>
+              <li>Singular value decomposition and eigenvalue decomposition</li>
+              <li>Power method and similarity transformations</li>
+              <li>Reduction to Hessenberg and tridiagonal forms</li>
+            </ul>
+          </li>
+          <li> Build fundamental understanding of iterative methods for
+            solving large sparse linear systems and computing eigenvalues
+            <ul>
+              <li>Conjugate gradient method, GMRES, and other Krylov
+                subspace methods</li>
+              <li>Lanczos and Arnoldi iterations</li>
+              <li>Preconditioners for iterative methods</li>
+            </ul>
+          </li>
+          <li>Demonstrate programming skills for numerical methods using
+            the abstractions of linear algebra</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Course Outline Section -->
+    <section id="outline">
+      <h2 class="section-title">Course Outline</h2>
+      <div class="course-outline-section">
+        <ul>
+          <li>Fundamentals
+            <ul>
+              <li>Matrix notation and basic operations</li>
+              <li>Vector spaces</li>
+              <li>Algorithmic considerations</li>
+              <li>Norms and condition numbers</li>
+              <li>Decomposition of matrices</li>
+            </ul>
+          </li>
+          <li>Linear systems
+            <ul>
+              <li>Triangular systems</li>
+              <li>Gaussian elimination</li>
+              <li>Accuracy and stability</li>
+              <li>Cholesky factorization</li>
+              <li>Sparse linear systems</li>
+            </ul>
+          </li>
+          <li>QR factorization and least squares
+            <ul>
+              <li>Gram-Schmidt orthogonalization</li>
+              <li>QR factorization with Householder reflection</li>
+              <li>Updating QR factorization with Givens rotation</li>
+              <li>Stability of QR factorization</li>
+              <li>Least squares problems</li>
+              <li>Rank-revealing QR factorization</li>
+              <li>SVD and low-rank approximations</li>
+            </ul>
+          </li>
+          <li>Eigenvalue problems
+            <ul>
+              <li>Eigenvalues and invariant spaces</li>
+              <li>Classical eigenvalue methods</li>
+              <li>QR algorithms</li>
+              <li>Two-stage methods</li>
+              <li>Arnoldi and Lanczos iterations</li>
+            </ul>
+          </li>
+          <li>Iterative Methods for linear systems
+            <ul>
+              <li>Basic iterative methods</li>
+              <li>Conjugate gradient methods</li>
+              <li>Minimal residual style methods</li>
+              <li>Bi-Lanczos iterations</li>
+              <li>Preconditioners</li>
+            </ul>
+          </li>
+          <li>Special topics (if time permits)
+            <ul>
+              <li>Multigrid methods</li>
+              <li>Under-determined linear systems</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 class="small-heading">You can find the <a href="schedule.html">lecture schedule and slides here.</a>
+        </h2>
+      </div>
+
+    </section>
+
+    <section id="delivery">
+      <h2 class="section-title">Course Delivery Mode and Structure</h2>
+      <div class="section-content">
+        <p>
+        <p>
+          This course will be in person. We will use Brightspace
+          (<a href="https://it.stonybrook.edu/services/brightspace">https://it.stonybrook.edu/services/brightspace</a>)
+          for posting and submission of assignments, posting grades, and discussion forums. For
+          personal/private issues, my preferred
+          method of contact is email, as listed at the top of this syllabus. I strive to respond to your
+          emails as soon as possible,
+          but please allow between 24-48 hours for a reply. All email communication will be sent to your Stony
+          Brook University email
+          account. You must have an active Stony Brook University email account and access to the Internet.
+          Please plan on checking
+          Brightspace regularly and your SBU email account for course-related messages or set up your SBU
+          email account to forward
+          to your preferred email account. To log in to Stony Brook Google Mail, go to
+          <a href="https://www.stonybrook.edu/mycloud">http://www.stonybrook.edu/mycloud</a>
+          and sign in with your NetID and password.
+        </p>
+        <p>
+          Important announcements will be sent on Brightspace. These will be posted in the class and may or
+          may not be sent by email.
+          I will participate and post regularly on the discussion board in Brightspace and provide feedback on
+          assignments within a
+          week. When participating in class discussions, the expectation is that
+          you will regularly respond to your peers and questions posed to your responses. Logging in
+          regularly, checking the discussion
+          board, and participating with your colleagues ensure that you can remain an active member of the
+          class.
+        </p>
+      </div>
+    </section>
+
+    <section id="tech-requirements">
+      <h2 class="section-title">Technical Requirements</h2>
+      <div class="section-content">
+        <p>You are responsible for having a computer throughout the term. The following lists detail
+          a minimum recommended computer set-up and the software packages you will need to access
+          and use:</p>
+
+        <h3>Hardware:</h3>
+        <ul>
+          <li>Intel Core i5 processor (or higher, including Apple silicon with Rosetta 2).</li>
+          <li>250 GB hard drive and 8 GB RAM.</li>
+          <li>A reliable high-speed internet connection.</li>
+        </ul>
+
+        <h3>Software:</h3>
+        <ul>
+          <li>Windows 10/11, Mac OS X (10.11 or higher), or Linux</li>
+          <li><a href="https://it.stonybrook.edu/software/title/matlab">MATLAB</a>, or</li>
+          <li><a href="https://www.anaconda.com/products/distribution">Anaconda for Python 3.x</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="assessment">
+      <h2 class="section-title">Course Policy and Assessment</h2>
+      <div class="section-content">
+        <h3>Attendance & Lecture Information</h3>
+        <p>
+          Attendance is required for all lectures, which can be attended either synchronously (in person)
+          or asynchronously (by watching recordings at your own pace). It is imperative that before seeking help during
+          office hours, students have adequately reviewed and familiarized themselves with the material
+          covered in the lectures. This ensures a productive and efficient use of office hour time and
+          facilitates a more effective learning process.
+        </p>
+
+        <h3>Assignment & Homework Details</h3>
+        <p>
+          Homework assignments are typically due two weeks after they are assigned and will be posted on
+          Brightspace. Submissions should be made through Brightspace. It is encouraged to typeset homework
+          solutions using LaTeX (e.g., on <a href="http://www.overleaf.com">Overleaf</a>) or <a href="http://www.lyx.org/">LyX</a>, or to submit a scanned handwritten
+          copy. However, Microsoft Word is <b>not</b> recommended.
+        </p>
+        <p>
+          You are encouraged to discuss the course material and homework problems with peers, but these discussions
+          should focus only on the general concepts and ideas, not on the solutions of specific homework problems.
+          It is imperative that you produce and submit solutions on your own. Copying or sourcing solutions, be it
+          from fellow students, previously distributed solutions, or other universities, is strictly
+          prohibited and will be treated as a violation of academic integrity, resulting in disciplinary
+          actions.
+
+        </p>
+        <p>
+          In the context of Generative AI platforms like ChatGPT, students are reminded of their limitations,
+          especially for an advanced course such as AMS 526. While generative AI might prove useful for
+          grammar refinement, sanity checks, and code debugging, they should not be trusted for content
+          creation or
+          problem solving. If you decide to incorporate substantial content or insights from these platforms
+          into your
+          work, ensure they are properly <a
+            href="https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Documentation/faq0422.html">
+            quoted and referenced</a>. Misrepresenting AI-generated content as your own work will be
+          flagged as an academic breach and could lead to severe consequences. However, for basic tasks like
+          grammar corrections or sanity checks, there is no obligation to credit the AI.
+        </p>
+
+        <h3>Late Submission Policy</h3>
+
+        <p>Understanding that unforeseen circumstances can arise, we aim to provide students with a policy that is both
+          fair and encourages timely submission of assignments.</p>
+
+        <ul>
+          <li><b>Grace Period:</b> Homework assignments submitted within 24 hours after the deadline will incur a
+            penalty of 10% off the earned points.</li>
+
+          <li><b>Extended Delays:</b> Homework submitted between 24 to 48 hours after the deadline will incur a penalty
+            of 20%. Assignments will not be accepted more than 48 hours past the original deadline, except for
+            extensions granted by the instructor beforehand.</li>
+
+          <li><b>Documented Excuses:</b> Exceptions will be made for documented medical reasons, family emergencies, or
+            other unforeseen serious events. In these cases, students should notify the instructor as soon as possible,
+            ideally before the assignment deadline. Documentation will be required.</li>
+
+          <li><b>Communication:</b> If you anticipate not being able to submit an assignment on time, it is essential to
+            communicate with the instructor or TA ahead of the deadline. While we cannot guarantee extensions, early
+            communication may lead to more favorable considerations.</li>
+
+          <li><b>Pre-approved Extension:</b> In certain unforeseen situations, the instructor may grant extensions to
+            the entire class. In this situation, the grace period will start after the extended deadline.</li>
+
+          <li><b>Consistency:</b> This policy is firm and will be consistently applied to all students to ensure
+            fairness. Please plan your time accordingly and aim to submit assignments well before deadlines to account
+            for any last-minute issues.</li>
+        </ul>
+        <h3>Examination Details</h3>
+        <p>
+          The exams, including two tests and the final exam, are <b>closed-book</b>. Students can bring a
+          <b>single-sided, one-page, letter-size cheat sheet</b> prepared by themselves. The exams will be in
+          person.
+        </p>
+        <p>Midterm Dates:</p>
+        <ul>
+          <li>First Midterm: Mon. 03/09 in class</li>
+          <li>Second Midterm: Wed. 04/15 in class</li>
+        </ul>
+        <p>Final Exam:</p>
+        <ul>
+          <li>Mon. 05/18 5:30pm&ndash;8:00pm (Frey Hall 226)</li>
+        </ul>
+        <p>
+          Sample tests will be available on Brightspace approximately one week before each exam.
+        </p>
+
+        <h3>In-class Quizzes/Exercises</h3>
+        <p>
+          There will be six in-class quizzes/exercises for providing early feedback and tracking attendance.
+          Up to one absence for these in-class activities will be excused. While each quiz/exercise will be
+          graded, the actual grade for this component will be determined based on the weighted average of the
+          midterm and final exam grades. Specifically, the actual grade for this part will be the weighted average of
+          the midterm and final grades multiplied by (min(<i>k</i>, 5)/5), where <i>k</i> is the number of quizzes
+          with a non-zero grade.
+        </p>
+
+        <h3>Grading Criteria</h3>
+        <ul>
+          <li>Assignments: 20%</li>
+          <li>Two midterm exams: 40%</li>
+          <li>Final exam: 30%</li>
+          <li>In-class quizzes/exercises: 10%</li>
+        </ul>
+        <p>Your cumulative score will be used to determine the final letter grade. There is no
+          pre-established scale or curve for grading. However, for reference, historical average scores for
+          letter grades in this course are as follows:</p>
+        <ul>
+          <li>90&ndash;100%: A</li>
+          <li>85&ndash;90%: A-</li>
+          <li>80&ndash;85%: B+/B</li>
+          <li>70&ndash;80%: B-</li>
+          <li>60&ndash;70%: C/C+</li>
+          <li>0&ndash;60%: F</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="references">
+      <h2 class="section-title">
+        References and Other Resources
+      </h2>
+      <div class="section-content">
+        <h3>References on Undergraduate-Level Linear Algebra</h3>
+        <p>The following is an excellent textbook for reviewing fundamental concepts and some applications of
+          linear algebra:</p>
+        <ul>
+          <li>G. Strang, <a href="https://www.amazon.com/Linear-Algebra-Its-Applications-4th/dp/0030105676"><i>Linear
+                Algebra and Its Applications</i></a>, 4th Edition, Brooks Cole, 2006.</li>
+          <li>G. Strang, <a href="http://math.mit.edu/%7Egs/linearalgebra/" target="_blank"
+              rel="noreferrer noopener"><i>Introduction to Linear Algebra</i></a>, 5th Edition,
+            Wellesley-Cambridge Press, 2016. (Lecture videos: <a
+              href="https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/" rel="noreferrer noopener"
+              target="_blank">https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/</a>)
+          </li>
+        </ul>
+
+        <h3>Other References on Numerical Linear Algebra</h3>
+        <p>The following book is a graduate-level textbook on numerical linear algebra, similar to the main
+          textbook for this course:</p>
+        <ul>
+          <li>J. W. Demmel, <a href="https://epubs.siam.org/doi/book/10.1137/1.9781611971446?mobileUi=0"><i>Applied
+                Numerical Linear Algebra</i></a>, SIAM, 1997.</li>
+        </ul>
+
+        <h3>References on Iterative and Multigrid Methods</h3>
+        <p>The following books are for additional readings on iterative methods and multigrid methods, which are
+          increasingly important but not covered in this course due to time constraint:</p>
+        <ul>
+          <li>Y. Saad, <a href="https://www-users.cs.umn.edu/%7Esaad/IterMethBook_2ndEd.pdf"><i>Iterative
+                Methods for Sparse Linear Systems</i></a>, SIAM, 2nd Edition, 2003.</li>
+          <li>H. A. van der Vorst, <a href="https://www.cambridge.org/core/books/iterative-krylov-methods-for-large-linear-systems/FFB93854B3C47699F045AC396C0A208F"><i>Iterative
+                Krylov Methods for Large Linear Systems</i></a>, Cambridge University Press, 2003.</li>
+          <li>W. L. Briggs, V. E. Henson, S. F. McCormick, <a
+            href="https://epubs.siam.org/doi/book/10.1137/1.9780898719505?mobileUi=0"><i>A Multigrid
+              Tutorial</i></a>, 2nd Edition, SIAM, 2000.</li>
+          <li>U. Trottenberg, C. W. Oosterlee, & A. Schuller (2001). <a href="https://shop.elsevier.com/books/multigrid/trottenberg/978-0-08-047956-9"><i>Multigrid</i></a>, Academic Press.</li>
+        </ul>
+
+        <h3>Linear Algebra for Data Science</h3>
+        <ul>
+          <li>G. Strang, <a href="https://www.amazon.com/Linear-Algebra-Learning-Gilbert-Strang/dp/0692196382"><i>Linear
+                Algebra and Learning from Data</i></a>, Wellesley-Cambridge Press, 2019. (Lecture
+            videos: <a
+              href="https://ocw.mit.edu/courses/mathematics/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/"
+              rel="noreferrer noopener"
+              target="_blank">https://ocw.mit.edu/courses/mathematics/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/</a>)
+          </li>
+        </ul>
+
+        <h3>References on MATLAB Programming</h3>
+        <ul>
+          <li>D.C. Attaway, <a href="https://www.amazon.com/dp/032391750X">MATLAB:
+            A Practical Introduction to Programming and Problem Solving</a>, 6th Edition, Butterworth-Heinemann, 2022.</li>
+          <li><a href="http://www.mathworks.com/academia/student_center/tutorials/launchpad.html">MATLAB
+              Tutorials and Learning Resources</a></li>
+          <li><a href="http://www.mathworks.com/help/pdf_doc/matlab/matlab_prog.pdf">MATLAB Programming
+              Fundamentals</a></li>
+        </ul>
+
+        <h3>References on NumPy Programming</h3>
+        <ul>
+          <li><a href="https://numpy.org/devdocs/user/quickstart.html">NumPy Quickstart Tutorial</a></li>
+          <li>R. Johansson, <a href="https://www.apress.com/gp/book/9781484242452"><i>Numerical Python:
+                Scientific Computing and Data Science Applications with Numpy, SciPy and
+                Matplotlib</i></a>. Apress, 2019.</li>
+        </ul>
+
+        <h3>References on C/C++ Programming</h3>
+        <p>There are many references on C and C++. For example:</p>
+        <ul>
+          <li>M. Banahan, D. Brady, M. Doran, <a href="http://publications.gbdirect.co.uk/c_book/"><i>The C
+                Book</i></a>, 2nd Edition, Addison Wesley, 1991.</li>
+          <li>B. Stroustrup, <a href="https://www.amazon.com/dp/0134997832"><i>A Tour of C++</i></a>, 2nd
+            Edition, 2018.</li>
+        </ul>
+
+        <h3>References on Technical Writing</h3>
+        <ul>
+          <li>N. J. Higham, <a href="https://my.siam.org/Store/Product/viewproduct/?ProductId=31300058"><i>Handbook of
+                Writing for the Mathematical Sciences</i></a>, 3rd Edition, SIAM 2019.</li>
+          <li><a href="https://wiki.lyx.org/LyX/Tutorials">LyX Tutorial</a></li>
+        </ul>
+      </div>
+    </section>
+    <section id="univ_policy">
+      <h2 class="section-title">
+        University Policies and Academic Integrity
+      </h2>
+      <div class="section-content">
+
+        <h3>Student Accessibility Support Center Statement</h3>
+        <p>If you have a physical, psychological, medical, or learning disability that may impact your course
+          work, please contact the Student Accessibility Support Center, Stony Brook Union Suite 107, (631)
+          632-6748, or at <a href="mailto:sasc@stonybrook.edu">sasc@stonybrook.edu</a>. They will determine
+          with you what accommodations are necessary and appropriate. All information and documentation is
+          confidential.</p>
+
+        <h3>Academic Integrity Statement</h3>
+        <p>Each student must pursue his or her academic goals honestly and be personally accountable for all
+          submitted work. Representing another person's work as your own is always wrong. Faculty is required
+          to report any suspected instances of academic dishonesty to the Academic Judiciary. Faculty in the
+          Health Sciences Center (School of Health Technology & Management, Nursing, Social Welfare, Dental
+          Medicine) and School of Medicine are required to follow their school-specific procedures. For more
+          comprehensive information on academic integrity, including categories of academic dishonesty please
+          refer to the academic judiciary website at <a
+            href="http://www.stonybrook.edu/commcms/academic_integrity/index.html">http://www.stonybrook.edu/commcms/academic_integrity/index.html</a>
+        </p>
+
+        <h3>Critical Incident Management</h3>
+        <p>Stony Brook University expects students to respect the rights, privileges, and property of other
+          people. Faculty are required to report to the Office of Student Conduct and Community Standards any
+          disruptive behavior that interrupts their ability to teach, compromises the safety of the learning
+          environment, or inhibits students' ability to learn. Faculty in the HSC Schools and the School of
+          Medicine are required to follow their school-specific procedures. Further information about most
+          academic matters can be found in the Undergraduate Bulletin, the Undergraduate Class Schedule, and
+          the Faculty-Employee Handbook.</p>
+
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

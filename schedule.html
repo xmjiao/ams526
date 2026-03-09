@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
+  <title>AMS 526 Numerical Linear Algebra Lecture Schedule - Spring 2026</title>
+  <style>
+    /* Reset default margin and padding */
+    body,
+    h1,
+    h2,
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      /* Default font */
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    /* Apply a margin to the h3 element */
+    h3 {
+      margin-bottom: 0;
+      /* Adjust as needed */
+    }
+
+    dl {
+      margin: 0 10px;
+      padding: 0;
+    }
+
+    dt {
+      display: inline-block;
+      width: 50px;
+      /* Adjust this width as needed */
+      font-weight: bold;
+    }
+
+    dd {
+      display: inline-block;
+      margin: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #e0e0e0;
+    }
+
+    th,
+    td {
+      padding: 10px 15px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f5f5f5;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fafafa;
+      /* Zebra stripe for better readability */
+    }
+
+    .bold-text {
+      font-weight: bold;
+    }
+
+    .italic-text {
+      font-style: italic;
+    }
+
+    header {
+      padding: 20px 0;
+      background-color: #4CAF50;
+      color: #fff;
+      text-align: center;
+    }
+
+    .course-info {
+      text-align: center;
+      background-color: #f9f9f9;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>AMS 526 Numerical Linear Algebra</h1>
+    <h2>Spring 2026 Lecture Schedule</h2>
+  </header>
+
+  <div class="course-info">
+    <p><strong>Time:</strong> MW 3:30&ndash;4:50PM | <strong>Location:</strong> Frey Hall 226 | <strong>Instructor:</strong> Prof. Xiangmin Jiao</p>
+  </div>
+
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th>Week</th>
+          <th>Date</th>
+          <th>Topic</th>
+          <th>Reading</th>
+          <th>Slides</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">1</td>
+          <td>Mon. 01/26</td>
+          <td><b>No class</b> (Snow Day)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 01/28</td>
+          <td>Course overview; matrix notation and basic operations; vector spaces</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;1, <abbr title="Matrix Computations">MC</abbr>&sect;1.1</td>
+          <td><a href="lectures/lecture01.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td rowspan="2">2</td>
+          <td>Mon. 02/02</td>
+          <td>Algorithmic considerations; orthogonality</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;2, <abbr title="Matrix Computations">MC</abbr>&sect;1.2</td>
+          <td><a href="lectures/lecture02.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 02/04</td>
+          <td>Vector and matrix norms</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;3, <abbr title="Matrix Computations">MC</abbr>&sect;2.2&ndash;4</td>
+          <td><a href="lectures/lecture03.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td rowspan="2">3</td>
+          <td>Mon. 02/09</td>
+          <td>Singular value decomposition</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;4&ndash;5</td>
+          <td><a href="lectures/lecture04.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 02/11</td>
+          <td>Projectors; condition numbers</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;6,12</td>
+          <td><a href="lectures/lecture05.pdf">slides</a></td>
+          <td><b>HW#1 due (Fri.)</b></td>
+        </tr>
+        <tr>
+          <td rowspan="2">4</td>
+          <td>Mon. 02/16</td>
+          <td>Floating-point arithmetic; accuracy and stability</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;13&ndash;15</td>
+          <td><a href="lectures/lecture06.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 02/18</td>
+          <td>Triangular systems; backward stability of forward substitution</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;17, <abbr title="Matrix Computations">MC</abbr>&sect;3.1</td>
+          <td><a href="lectures/lecture07.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td rowspan="2">5</td>
+          <td>Mon. 02/23</td>
+          <td><b>No class</b> (Snow Day)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 02/25</td>
+          <td>Gaussian elimination with partial pivoting</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;20&ndash;21, <abbr title="Matrix Computations">MC</abbr>&sect;3.2&3.4</td>
+          <td><a href="lectures/lecture08.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td rowspan="2">6</td>
+          <td>Mon. 03/02</td>
+          <td>Conditioning of linear systems; stability of Gaussian elimination</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;22, <abbr title="Matrix Computations">MC</abbr>&sect;3.3&3.5</td>
+          <td><a href="lectures/lecture09.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 03/04</td>
+          <td>Positive definite systems; Cholesky factorization; review for midterm #1</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;23, <abbr title="Matrix Computations">MC</abbr>&sect;4.2</td>
+          <td><a href="lectures/lecture10.pdf">slides</a></td>
+          <td><b>HW#2 due (Wed.)</b></td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">7</td>
+          <td>Mon. 03/09</td>
+          <td><b>Midterm #1</b> in class (covers up to Gaussian elimination)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 03/11</td>
+          <td>QR factorization, Gram-Schmidt orthogonalization; Householder reflectors</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;7,8,10</td>
+          <td><a href="lectures/lecture11.pdf">slides</a></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">Break</td>
+          <td>Mon. 03/16</td>
+          <td><b>No class</b> (Spring Recess)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 03/18</td>
+          <td><b>No class</b> (Spring Recess)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">8</td>
+          <td>Mon. 03/23</td>
+          <td>Givens rotations; full-rank least squares problem; conditioning of least squares problem</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;11,18</td>
+          <td><a href="lectures/lecture12.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 03/25</td>
+          <td>Stability of Householder QR; other methods for least squares problems; linear algebra software</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;16,19; <a href="lectures/example.c">example C code</a></td>
+          <td><a href="lectures/lecture13.pdf">slides</a></td>
+          <td><b>HW#3 due (Sun.)</b></td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">9</td>
+          <td>Mon. 03/30</td>
+          <td>Eigenvalue problems; eigenvalue revealing factorizations</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;24&ndash;25</td>
+          <td><a href="lectures/lecture14.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 04/01</td>
+          <td>Reduction to Hessenberg forms; Rayleigh quotient iteration</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;26&ndash;27</td>
+          <td><a href="lectures/lecture15.pdf">slides</a></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">10</td>
+          <td>Mon. 04/06</td>
+          <td>QR algorithm without shifts; QR algorithm with shifts</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;28&ndash;29</td>
+          <td><a href="lectures/lecture16.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 04/08</td>
+          <td>More methods for tridiagonal problems</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;30</td>
+          <td><a href="lectures/lecture17.pdf">slides</a></td>
+          <td><b>HW#4 due (Sun.)</b></td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">11</td>
+          <td>Mon. 04/13</td>
+          <td>Sensitivity of eigenvalues; review for midterm #2</td>
+          <td><abbr title="Matrix Computations">MC</abbr>&sect;7.2</td>
+          <td><a href="lectures/lecture18.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 04/15</td>
+          <td><b>Midterm #2</b> in class (covers up to more methods for tridiagonal problems)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">12</td>
+          <td>Mon. 04/20</td>
+          <td>Computing SVD; sparse storage formats</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;31</td>
+          <td><a href="lectures/lecture19.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 04/22</td>
+          <td>Sparse direct solvers; overview of iterative methods</td>
+          <td><abbr title="Matrix Computations">MC</abbr>&sect;11.1&ndash;11.2</td>
+          <td><a href="lectures/lecture20.pdf">slides</a></td>
+          <td><b>HW#5 due (Fri.)</b></td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">13</td>
+          <td>Mon. 04/27</td>
+          <td>Arnoldi and Lanczos iterations</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;32&ndash;34</td>
+          <td><a href="lectures/lecture21.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 04/29</td>
+          <td>Conjugate gradient method</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;38; <abbr title="Matrix Computations">MC</abbr>&sect;11.3</td>
+          <td><a href="lectures/lecture22.pdf">slides</a></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">14</td>
+          <td>Mon. 05/04</td>
+          <td>Minimal residual (GMRES)</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;35</td>
+          <td><a href="lectures/lecture23.pdf">slides</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed. 05/06</td>
+          <td>Biorthogonalization methods; preconditioners; review for final exam</td>
+          <td><abbr title="Numerical Linear Algebra">NLA</abbr>&sect;39&ndash;40</td>
+          <td><a href="lectures/lecture24.pdf">slides</a>; <a href="lectures/review-final.pdf">review slides</a></td>
+          <td><b>HW#6 due (Fri.)</b></td>
+        </tr>
+
+        <tr>
+          <td>Final</td>
+          <td>Mon. 05/18</td>
+          <td><b>Final exam, 5:30pm&ndash;8:00pm (Frey Hall 226)</b></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Abbreviations</h3>
+    <dl>
+      <dt><abbr title="Matrix Computations">MC</abbr>:</dt>
+      <dd>Matrix Computations</dd>
+      <br>
+      <dt><abbr title="Numerical Linear Algebra">NLA</abbr>:</dt>
+      <dd>Numerical Linear Algebra</dd>
+    </dl>
+    <p><br><b>Notes</b>: All schedules are tentative and are subject to change. Final exam time is determined by the "MW 3:30pm" time block on the Registrar's planning worksheet.</p>
+
+  </section>
+</body>
+
+</html>
